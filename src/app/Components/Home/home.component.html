@@ -1,0 +1,21 @@
+<div *ngIf="authService.IsAuthenticated()">home works!
+  <button (click)="Logout()">Logout</button> &nbsp;
+
+  <br>
+  <br>
+ 
+  <span *ngFor="let tab of Tabs">
+    &nbsp;
+      <button (click)="OnOpenScreen(tab)">{{tab.Title}}</button>
+  </span>
+
+  <h3>Screens</h3>
+  <br>
+  <br>
+  
+  <div>
+      <!-- <ng-content></ng-content> -->
+      <ng-template AppScreen></ng-template>
+      
+  </div>
+</div>
